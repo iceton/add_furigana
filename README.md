@@ -12,8 +12,6 @@ The Natto examples I saw choked on non-Japanese characters, so a sentence with a
 ## Usage
 
 ```rb
-> require './add_furigana'
-=> true
 > af = AddFurigana.new
 
 > af.enrich('今、朝ご飯を<b>作って</b>います。')
