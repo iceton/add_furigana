@@ -15,8 +15,13 @@ The Natto examples I saw choked on non-Japanese characters, so a sentence with a
 > require './add_furigana'
 => true
 > af = AddFurigana.new
+
 > af.enrich('今、朝ご飯を<b>作って</b>います。')
 => "今[いま]、 朝[あさ] ご飯[ごはん]を<b>作っ[つくっ]て</b>います。"
+
 > af.enrich('雑誌にその女優の<b>対談</b>が載っていたよ。')
 => "雑誌[ざっし]にその 女優[じょゆー]の<b>対談[たいだん]</b>が 載っ[のっ]ていたよ。"
+
+> af.enrich('32ページを<b>開いて</b>ください。')
+=> "32ページを<b>開い[ひらい]て</b>ください。"
 ```
