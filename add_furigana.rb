@@ -37,7 +37,7 @@ class AddFurigana
       feature = lang_node.feature
       surface = lang_node.surface
       yomi = feature.split(',').last
-      # select_kanji catches some words like ご飯 which are node type 6
+      # has_kanji? catches some words like ご飯 which are node type 6
       if yomi != EMPTY_YOMI && surface != yomi && (lang_node.char_type == KANJI_CHAR_TYPE || has_kanji?(surface))
         hiragana = NKF.nkf(NKF_ARGS, yomi)
         enriched_surface = " #{surface}[#{hiragana}]"
