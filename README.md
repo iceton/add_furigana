@@ -1,4 +1,4 @@
-# japanese_mecab
+# add_furigana
 Tools for parsing and enriching Japanese
 
 ## What?
