@@ -9,6 +9,10 @@ MeCab discussion and documentation can be difficult to find and navigate, so I'm
 
 The Natto examples I saw choked on non-Japanese characters, so a sentence with a number like _3月は仕事が忙しい。_ wouldn't work, much less HTML. People refer to kanji as char_type 2, but some phrases with kanji like ご飯 are char_type 6. Parsing 10,000 strings is quick if you reuse Natto parsers, but you can't analyze two strings at the same time or the first will be interrupted. Natto is also picky about what happens it its `parse` block.
 
+## Setup
+
+MeCab and IPAdic are required. Installing with homebrew worked before, but on a newer ARM Mac, charset defaults seem to derail this. Downloading the [source](https://taku910.github.io/mecab/#download), configuring with [`--enable-utf8-only`](https://taku910.github.io/mecab/#utf-8), and installing work for me.
+
 ## Usage
 
 ```rb

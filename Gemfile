@@ -2,8 +2,7 @@
 
 source "https://rubygems.org"
 
-gem 'activesupport'
 gem 'json'
 gem 'natto'
+gem 'nkf'
 gem 'nokogiri'
-gem 'pry'

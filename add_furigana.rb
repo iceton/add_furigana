@@ -1,10 +1,9 @@
 # frozen_string_literal: true
 
-require 'active_support/all'
-require 'json'
 require 'natto'
 require 'nkf'
 require 'nokogiri'
+require 'pry'
 
 # Add Anki-style furigana to HTML
 class AddFurigana
@@ -28,7 +27,7 @@ class AddFurigana
   private
 
   def child_nodes_or_self(node)
-    node.children.present? ? node.children.flat_map { |c| child_nodes_or_self(c) } : node
+    !node.children.empty? ? node.children.flat_map { |c| child_nodes_or_self(c) } : node
   end
 
   def enrich_content(str)
@@ -46,7 +45,7 @@ class AddFurigana
         enriched_lang_nodes << surface
       end
     end
-    enriched_lang_nodes.join.squish
+    enriched_lang_nodes.join.gsub(/[[:space:]]+/, ' ').strip
   end
 
   def has_kanji?(str)
