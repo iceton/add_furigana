@@ -10,6 +10,15 @@ The Natto examples I saw choked on non-Japanese characters, so a sentence with a
 
 MeCab and IPAdic are required. Installing with homebrew worked before, but on a newer ARM Mac, charset defaults seem to derail this. Downloading the [source](https://taku910.github.io/mecab/#download), configuring with [`--enable-utf8-only`](https://taku910.github.io/mecab/#utf-8), and installing work for me.
 
+```
+mecab-0.996 > ./configure --enable-utf8-only
+mecab-0.996 > make install
+mecab-ipadic-2.7.0-20070801 > ./configure --enable-utf8-only
+mecab-ipadic-2.7.0-20070801 > make install
+```
+
+`make install` may require `sudo`. Update `/usr/local/lib/mecab/dic/ipadic/dicrc` to specify `config-charset = UTF-8` too.
+
 ## Usage
 
 ```rb
