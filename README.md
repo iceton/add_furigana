@@ -1,8 +1,5 @@
-# add_furigana
-Tools for parsing and enriching Japanese
-
-## What?
-Add furigana notations to HTML or text
+# Add Furigana
+Add [furigana](https://en.wikipedia.org/wiki/Furigana) (振り仮名/yomigana/読み仮名/ruby) notations to HTML or text
 
 ## Why?
 MeCab discussion and documentation can be difficult to find and navigate, so I'm sharing some things I learned while making an Anki deck.
